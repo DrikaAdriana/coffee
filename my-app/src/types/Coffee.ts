@@ -3,6 +3,7 @@ interface Coffee {
     name: string;
     description: string;
     type: string
+    imageURL: string
   }
   
   export type { Coffee };

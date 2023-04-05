@@ -1,22 +1,34 @@
-
-import React from 'react';
-import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import CoffeeList from './components/coffee/CoffeList';
-import CoffeeDetails from './components/coffee/CoffeeDetails';
-import CoffeeForm from './components/coffee/CoffeeForm';
+import React, { useEffect } from "react";
+import  { useDispatch } from 'react-redux';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import fetchCoffees from "./components/FetchCoffees";
+import CoffeeList from "./components/coffee/CoffeList";
+import  NewCoffee  from "./components/NewCoffee";
+import EditCoffee from "./pages/EditCoffee";
+import { Home } from "@material-ui/icons";
+import { AppBar, Toolbar, Typography } from "@material-ui/core";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCoffees());
+  }, [dispatch]);
+
   return (
-    <div className="App">
-      <Router>
-        <Switch>
-          <Route exact path="/" component={CoffeeList} />
-          <Route exact path="/coffees/:id" component={CoffeeDetails} />
-          <Route exact path="/add-coffee" component={CoffeeForm} />
-        </Switch>
-      </Router>
-    </div>
+    <Router>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6">Coffee App</Typography>
+        </Toolbar>
+      </AppBar>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/coffees" exact component={CoffeeList} />
+        <Route path="/coffees/new" exact component={NewCoffee} />
+        <Route path="/coffees/:id/edit" exact component={EditCoffee} />
+      </Switch>
+    </Router>
   );
 }
 
