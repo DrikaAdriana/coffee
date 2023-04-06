@@ -1,4 +1,4 @@
-export async function fetchCoffees(coffeeType: string) {
+export async function FetchApiCoffees(coffeeType: string) {
     let endpoint;
     if (coffeeType === "Iced") {
       endpoint = "https://api.sampleapis.com/coffee/iced";

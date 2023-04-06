@@ -3,14 +3,14 @@ import { useHistory, useParams } from 'react-router-dom';
 import { Button, Container, TextField } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import axios from 'axios';
-import { Coffee } from '../types/Coffee';
+import { Coffee } from '../models/Coffee';
 
 interface Props {
   onSave: (coffee: Coffee) => void;
 }
 
 interface RouteParams {
-  id: string;
+  id: string
 }
 
 const useStyles = makeStyles((theme) => ({

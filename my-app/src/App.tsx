@@ -1,18 +1,25 @@
-import React, { useEffect } from "react";
-import  { useDispatch } from 'react-redux';
+import { useEffect } from "react";
+import { useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import fetchCoffees from "./components/FetchCoffees";
 import CoffeeList from "./components/coffee/CoffeList";
-import  NewCoffee  from "./components/NewCoffee";
+import NewCoffee from "./components/NewCoffee";
 import EditCoffee from "./pages/EditCoffee";
 import { Home } from "@material-ui/icons";
 import { AppBar, Toolbar, Typography } from "@material-ui/core";
+import { Dispatch, AnyAction } from 'redux';
+import { FetchApiCoffees } from "./services/FetchApiCoffees";
+
+
 
 function App() {
-  const dispatch = useDispatch();
+  const dispatch: Dispatch<AnyAction> = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchCoffees());
+    async function getCoffees() {
+      const coffees = await FetchApiCoffees('all');
+      dispatch({ type: "FETCH_COFFEES_SUCCESS", payload: coffees });
+    }
+    getCoffees();
   }, [dispatch]);
 
   return (

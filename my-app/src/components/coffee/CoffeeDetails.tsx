@@ -1,5 +1,5 @@
 import React from 'react';
-import { Coffee } from '../../types/Coffee';
+
 
 interface Props {
   coffee: Coffee;

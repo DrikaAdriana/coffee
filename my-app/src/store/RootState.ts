@@ -1,4 +1,4 @@
-import { CoffeeState }  from ".coffeeSlice";
+import { CoffeeState } from "./CoffeeState";
 
 export interface RootState {
   coffee: CoffeeState;
