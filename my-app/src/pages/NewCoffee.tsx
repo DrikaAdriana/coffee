@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
 
-import { Coffee } from '../models/Coffee';
+import { Coffee } from '../components/Coffee';
 import { addCoffee } from '../models/coffeeActions';
 
 const useStyles = makeStyles((theme) => ({

@@ -1,2 +1,2 @@
-export * from './ComponenteFetchCoffees'
-export * from './CoffeList'
+export * from '../ComponenteFetchCoffees'
+export * from '../CoffeList'

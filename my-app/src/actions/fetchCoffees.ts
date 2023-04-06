@@ -1,6 +1,6 @@
 
 import { Dispatch } from "redux";
-import { fetchCoffeesRequest, fetchCoffeesSuccess, fetchCoffeesFailure } from '../actions';
+import { fetchCoffeesRequest, fetchCoffeesSuccess, fetchCoffeesFailure } from './index';
 import { getCoffees } from "../services/coffeeService";
 
 const fetchCoffees = (type?: string) => {

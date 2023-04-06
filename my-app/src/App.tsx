@@ -1,14 +1,15 @@
 import { useEffect } from "react";
 import { useDispatch } from 'react-redux';
+import { Dispatch, AnyAction } from 'redux';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import CoffeeList from "./components/coffee/CoffeList";
-import NewCoffee from "./components/NewCoffee";
-import EditCoffee from "./pages/EditCoffee";
+
 import { Home } from "@material-ui/icons";
 import { AppBar, Toolbar, Typography } from "@material-ui/core";
-import { Dispatch, AnyAction } from 'redux';
 import { FetchApiCoffees } from "./services/FetchApiCoffees";
 
+import CoffeeList from "./components/CoffeList";
+import NewCoffee from "./components/NewCoffee";
+import EditCoffee from "./components/EditCoffee";
 
 
 function App() {

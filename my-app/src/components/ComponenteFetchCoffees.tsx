@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../store/RootState';
-import { FetchApiCoffees } from '../../services/FetchApiCoffees';
+import { RootState } from '../store/RootState';
+import { FetchApiCoffees } from '../services/FetchApiCoffees';
 
 const ComponenteFetchCoffees: React.FC = () => {
   const dispatch = useDispatch();

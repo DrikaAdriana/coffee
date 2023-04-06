@@ -1,4 +1,4 @@
-import { Coffee } from '../models/Coffee';
+import { Coffee } from '../components/Coffee';
 
 export const ADD_COFFEE = 'ADD_COFFEE';
 

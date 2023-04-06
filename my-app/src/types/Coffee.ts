@@ -1,4 +1,5 @@
-interface Coffee {
+
+ interface Coffee {
   id?: number;
   name: string;
   description: string;
@@ -6,3 +7,4 @@ interface Coffee {
   imageURL: string
   ingredients: []
 }
+

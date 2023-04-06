@@ -1,7 +1,7 @@
-import { ADD_COFFEE, DELETE_COFFEE, UPDATE_COFFEE, CoffeeActionTypes } from "../actions/coffeeActionTypes";
-import { Coffee } from '../models/Coffee';
+import { ADD_COFFEE, CoffeeActionTypes, DELETE_COFFEE, UPDATE_COFFEE } from "../actions/coffeeActionTypes";
+import { Coffee } from "../types/Coffee";
 
-export interface CoffeeState {
+interface CoffeeState {
   coffees: Coffee[];
 }
 
@@ -9,15 +9,15 @@ const initialState: CoffeeState = {
   coffees: [],
 };
 
-export const coffeeReducer = (
-  state: CoffeeState = initialState,
+const coffeeReducer = (
+  state = initialState,
   action: CoffeeActionTypes
 ): CoffeeState => {
   switch (action.type) {
     case ADD_COFFEE:
       return {
         ...state,
-        coffees: [...state.coffees, action.payload],
+        coffees: [...state.coffees, {...action.payload}],
       };
     case UPDATE_COFFEE:
       const updatedCoffees = state.coffees.map((coffee) =>
@@ -25,7 +25,7 @@ export const coffeeReducer = (
       );
       return {
         ...state,
-        coffees: updatedCoffees,
+        coffees: updatedCoffees as Coffee[],
       };
     case DELETE_COFFEE:
       const filteredCoffees = state.coffees.filter(
@@ -39,3 +39,5 @@ export const coffeeReducer = (
       return state;
   }
 };
+
+export default coffeeReducer;

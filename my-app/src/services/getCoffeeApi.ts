@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const API_URL = 'https://api.sampleapis.com/coffee';
 
-const getCoffee= async (id: string) => {
+const getCoffeeApi= async (id: string) => {
   try {
     const response = await axios.get(`${API_URL}/id/${id}`);
     return response.data;
@@ -11,4 +11,4 @@ const getCoffee= async (id: string) => {
   }
 };
 
-export default getCoffee;
+export default getCoffeeApi;
