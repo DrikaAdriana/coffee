@@ -1,4 +1,4 @@
-import Coffee from '../types/Coffee';
+import Coffee from '../store/Coffee';
 
 export const ADD_COFFEE = 'ADD_COFFEE';
 

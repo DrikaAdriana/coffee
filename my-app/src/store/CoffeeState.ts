@@ -12,3 +12,5 @@ export interface CoffeeState {
     imageURL: string
     ingredients: string[]
   }
+
+  

@@ -1,11 +1,11 @@
 
- interface Coffee {
+interface Coffee {
   id?: number;
   name: string;
   description: string;
-  type: string
-  imageURL: string
-  ingredients: []
+  type: string;
+  imageURL: string;
+  ingredients: string[];
 }
 
 export default Coffee;

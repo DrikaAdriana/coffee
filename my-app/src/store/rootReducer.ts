@@ -1,5 +1,8 @@
 import { combineReducers } from 'redux';
-import { coffeeReducer, CoffeeState } from './coffeeReducer';
+import { CoffeeState } from './CoffeeState';
+import coffeeReducer from './coffeeReducer';
+
+
 
 export interface RootState {
   coffee: CoffeeState;

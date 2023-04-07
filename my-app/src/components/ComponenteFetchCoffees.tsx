@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../store/RootState';
+import { RootState } from '../store/rootReducer';
 import { FetchApiCoffees } from '../services/FetchApiCoffees';
 
 interface Props {
