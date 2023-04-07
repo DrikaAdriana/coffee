@@ -3,16 +3,24 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store/RootState';
 import { FetchApiCoffees } from '../services/FetchApiCoffees';
 
-const ComponenteFetchCoffees: React.FC = () => {
+interface Props {
+  coffeeType: string;
+}
+
+const ComponenteFetchCoffees: React.FC<Props> = ({ coffeeType }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    async function getCoffees() {
-      const data = await FetchApiCoffees('Iced');
-      dispatch({ type: 'SET_COFFEES', payload: data });
-    }
+    const getCoffees = async () => {
+      try {
+        const data = await FetchApiCoffees(coffeeType);
+        dispatch({ type: 'SET_COFFEES', payload: data });
+      } catch (error) {
+        console.error('Error fetching coffees:', error);
+      }
+    };
     getCoffees();
-  }, [dispatch]);
+  }, [dispatch, coffeeType]);
 
   const loading = useSelector((state: RootState) => state.coffee.loading);
 
@@ -20,6 +28,7 @@ const ComponenteFetchCoffees: React.FC = () => {
     <div>
       {loading && <p>Loading...</p>}
       <h2>Coffees:</h2>
+      {/* Renderizar a lista de cafés aqui */}
     </div>
   );
 };

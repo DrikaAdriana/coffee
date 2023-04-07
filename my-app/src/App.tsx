@@ -7,7 +7,7 @@ import { Home } from "@material-ui/icons";
 import { AppBar, Toolbar, Typography } from "@material-ui/core";
 import { FetchApiCoffees } from "./services/FetchApiCoffees";
 
-import CoffeeList from "./components/CoffeList";
+import CoffeeList from "./components/CoffeeList";
 import NewCoffee from "./components/NewCoffee";
 import EditCoffee from "./components/EditCoffee";
 

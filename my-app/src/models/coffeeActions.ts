@@ -1,4 +1,4 @@
-import { Coffee } from '../components/Coffee';
+import Coffee from '../types/Coffee';
 
 // Define action type constants
 export const ADD_COFFEE = 'ADD_COFFEE';

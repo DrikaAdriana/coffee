@@ -4,7 +4,7 @@ import { Button, Container, TextField } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
-import { Coffee } from '../types/Coffee'; 
+import Coffee from '../types/Coffee'; 
 
 import { addCoffee } from '../models/coffeeActions';
 

@@ -8,3 +8,4 @@
   ingredients: []
 }
 
+export default Coffee;
