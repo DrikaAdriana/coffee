@@ -9,7 +9,7 @@ interface Coffee {
   name: string;
   type: string;
   description: string;
-  ingredients: string [];
+  ingredients: [];
 }
 
 interface Option {
