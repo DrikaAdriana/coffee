@@ -3,7 +3,7 @@
 const Header = () => {
   return (
     <header>
-      <h1>Coffee Shop</h1>
+      <h1>Coffee Shp</h1>
     </header>
   );
 };

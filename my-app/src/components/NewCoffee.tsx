@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import Coffee from '../store/Coffee'; 
+import  Header from './Header'
 
 import { addCoffee } from '../actions/coffeeActions';
 
@@ -75,6 +76,7 @@ const NewCoffee = () => {
 
   return (
     <Container maxWidth="sm" className={classes.container}>
+      <Header/>
       <form className={classes.form} onSubmit={handleSubmit}>
         <TextField label="Name" value={name} onChange={handleNameChange} />
         <TextField label="Type" value={type} onChange={handleTypeChange} />
